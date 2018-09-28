@@ -5,11 +5,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Clickshopping</title>
-    <link rel="stylesheet" type="text/css" href="styles/bootstrap4/bootstrap.min.css">
-    <link rel="stylesheet" type="text/css" href="styles/formstyle.css">
+    <link rel="stylesheet" type="text/css" href="../styles/bootstrap4/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="../styles/formstyle.css">
     <link href="https://gitcdn.github.io/bootstrap-toggle/2.2.2/css/bootstrap-toggle.min.css" rel="stylesheet">
 <script src="https://gitcdn.github.io/bootstrap-toggle/2.2.2/js/bootstrap-toggle.min.js"></script>
-<script src=js/Sweatalert.js></script>
+<script src="../js/Sweatalert.js"></script>
 </head>
 <body>
   
@@ -58,7 +58,8 @@
          <td>
           <label for="pcategories">Categories</label></td>
      <td>  <select class="form-control"  multiple id="pcategories" placeholder="Enter Product Qunatity" name="pcategories[]">
-         <option>Male Fashion</option>
+     <option>Bueaty & Health</option>   
+     <option>Male Fashion</option>
          <option>Female Fashion</option>
          <option>Cosmatic</option>
         </select>
@@ -85,7 +86,14 @@
         <div class="form-inline">
          <tr>
           <td><label for="pkeyfeature">Key Feature</label></td>
-         <td> <textarea  class="form-control" id="pkeyfeature" name="pkeyfeature">
+         <td> <textarea  class="form-control" id="pkeyfeature"  name="pkeyfeature">
+         <ul>
+           <b><li> KEY FEATURES </li></b>
+           <li></li>
+           <li></li>
+           <li></li>
+
+
             </textarea>
             </td>
         </div>
@@ -159,13 +167,13 @@ if(isset($_POST['check']) && isset($_POST['pname']) && isset($_POST['pprice']) &
               $sql1 ="INSERT INTO `categories_info` (`Po_Id`, `C_Name`) VALUES ('$last_id', '$pcategoriess')";
               if(mysqli_query($conn,$sql1) && $j)
               {
-                echo 'echo <script language="javascript">';
+                echo ' <script language="javascript">';
                   echo 'swal("Good job!", "You Product Information has Been Submited", "success");';
                   echo '</script>';
               }  
         else
               {
-              echo 'echo <script language="javascript">';
+              echo ' <script language="javascript">';
               echo 'swal("Error!", '.$j.', "error");';
               echo '</script>';
               }
